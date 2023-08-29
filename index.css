@@ -1,0 +1,130 @@
+html {
+    min-width: max-content;
+    height: 100%;
+    /* Код прокрутки на будущее. Сейчас работает только на mazilla firefox */
+    scrollbar-width: thin;          /* "auto" или "thin"  */
+    scrollbar-color: #505050 transparent;   /* плашка скролла и дорожка */ 
+    /* Ниже расположен важный параметр для плавного переключения страниц (цветность затемнения) */ 
+    background-color: black;
+}
+body {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    position: relative;
+    display: flex;
+    margin: 0;
+    min-height: 100%;
+    /* Ниже расположены параметры для плавного переключения страниц */
+    opacity:0;
+    transition:1s;
+}
+/* Это актуальный код прокрутки для всех браузеров, кроме IE и Firefox. */
+body::-webkit-scrollbar {
+    width: 4px; /* ширина scrollbar */
+}
+body::-webkit-scrollbar-track {
+    background: transparent; /* цвет дорожки */
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #505050; /* цвет плашки */
+    border-radius: 20px; /* закругления плашки */
+}
+main {
+    width: 700px;
+    margin: auto;
+    border-top: 6px solid #505050;
+    border-left: 3px solid #707070;
+    border-right: 6px solid #505050;
+    border-bottom: 3px solid #707070;
+    border-radius: 10px;
+    background-color: #c7c7c7d7;
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+div.spoiler_head { 
+    cursor: pointer; 
+    font-weight: bold; 
+    background-color: #c7c7c7d7;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 2px solid #505050;
+    border-left: 2px solid #505050;;
+    border-top: 4px solid #505050;
+    border-right: 4px solid #505050;
+    box-shadow: 0 3px 2px -2px #505050;
+    padding: 10px;
+    user-select: none;
+}
+div.spoiler_body { 
+    display: none;  
+    background-color: #c7c7c7d7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-right: 4px solid #505050;
+    border-bottom: 2px solid #505050;
+    border-left: 2px solid #505050;
+    box-shadow: 0 3px 2px -2px #505050;
+    padding: 10px;
+}
+input {
+    font-size: large;
+}
+p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+p a {
+    font-size: larger;
+}
+a /* Общий формат ссылок */ {
+    margin: 5px;
+    text-decoration: none;
+    /* box-shadow: -1px 2px #606060; */
+    border-radius: 10px;
+    border-bottom: 2px solid #606060;
+    border-left: 2px solid #606060;
+    background-color: #70707044;
+    padding: 8px;
+    box-shadow:
+    4px -4px #505050,
+    3px -3px #505050,
+    2px -2px #505050,
+    1px -1px #505050;
+    -webkit-transform: translateX(-0px);
+    transform: translateX(-0px);
+    -webkit-transform: translateY(-0px);
+    transform: translateY(-0px);
+    transition: all 0.3s ease;
+}
+a:link /* Непосещенная */ {
+    color: inherit; 
+}
+a:visited /* Посещенная */ {
+    color: inherit;
+}
+a:hover /*При наведении. Не нажатая.*/ {
+    /* color: #005eff; 
+    text-shadow: #003694 1px -1px 0px; */
+    border-radius: 10px;
+    border-bottom: 2px solid #606060;
+    border-left: 2px solid #606060;
+    box-shadow:
+    2px -2px #505050,
+    1px -1px #505050;
+    -webkit-transform: translateX(2px) translateY(-2px);
+    transform: translateX(2px) translateY(-2px);
+}
+a:active /* При наведении. Нажатая */ {
+    /* color: #81adff; 
+    text-shadow: #2f4d86 1px -1px 0px; */
+    box-shadow:
+    2px -2px #505050,
+    1px -1px #505050;
+    -webkit-transform: translateX(2px) translateY(-2px);
+    transform: translateX(2px) translateY(-2px);
+}
